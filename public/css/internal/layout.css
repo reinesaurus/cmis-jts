@@ -1,0 +1,82 @@
+/* RESET */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6fa;
+}
+
+/* TOPBAR (TETAP SAMA STYLE AWAL) */
+.topbar {
+    height: 60px;
+    background: #5b6ee1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.logo-box {
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 3px;
+}
+
+/* LAYOUT */
+.layout {
+    display: flex;
+}
+
+/* CONTENT */
+.content-area {
+    margin-left: 240px;
+    margin-top: 60px;
+    padding: 24px;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center; /* 🔥 INI YANG BIKIN CENTER */
+}
+
+/* CONTAINER */
+.page-container {
+    width: 100%;
+    max-width: 1200px; /* 🔥 jangan kekecilan */
+    margin:0 auto;
+}
+    
+/* HEADER */
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.page-subtitle {
+    color: #666;
+    margin-top: 6px;
+}

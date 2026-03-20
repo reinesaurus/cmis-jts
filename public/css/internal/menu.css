@@ -1,0 +1,34 @@
+.sidebar {
+    width: 240px;
+    background: #7fa9a5;
+
+    position: fixed;
+    top: 60px; /* di bawah topbar */
+    left: 0;
+    bottom: 0;
+
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin: 8px 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.2);
+    border-radius: 6px;
+}
