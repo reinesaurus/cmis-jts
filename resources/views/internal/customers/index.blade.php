@@ -1,23 +1,22 @@
 @extends('layouts.internal')
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/internal/customers.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/internal/customers.css') }}">
 @endpush
 
 @section('content')
+    <div class="page-header">
+        <div>
+            <h1 class="page-title">Customers</h1>
+            <p class="page-subtitle">
+                Customers who are eligible for membership reward
+            </p>
+        </div>
 
-<div class="page-header">
-    <div>
-        <h1 class="page-title">Customers</h1>
-        <p class="page-subtitle">
-            Customers who are eligible for membership reward
-        </p>
+        <a href="/internal/customers/create" class="btn-primary">
+            + Add Customer
+        </a>
     </div>
-
-    <a href="/internal/customers/create" class="btn-primary">
-        + Add Customer
-    </a>
-</div>
 
     <!-- SEARCH -->
     <div style="toolbar">
@@ -27,56 +26,60 @@
         </form>
     </div>
 
-<div class="card">
+    <div class="card">
 
-    <!-- TABLE -->
-    <div class="table-container">
-        <table class="table">
-    <thead>
-        <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Contact</th>
-            <th>Tier</th>
-            <th>Transactions</th>
-            <th>Points</th>
-            <th>Action</th>
-        </tr>
-    </thead>
+        <!-- TABLE -->
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Contact</th>
+                        <th>Tier</th>
+                        <th>Transactions</th>
+                        <th>Points</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
 
-    <tbody>
-        @foreach ($customers as $c)
-        <tr>
-            <td>{{ $c->customer_code }}</td>
+                <tbody>
+                    @foreach ($customers as $c)
+                        <tr>
+                            <td>{{ $c->customer_code }}</td>
 
-            <td>{{ $c->customer_name }}</td>
+                            <td>{{ $c->user->name }}</td>
 
-            <td>{{ $c->customer_type_name }}</td>
+                            <td>{{ $c->customer_type_name }}</td>
 
-            <td>
-                {{ $c->email }}<br>
-                <small>{{ $c->phone_number }}</small>
-            </td>
+                            <td>
+                                {{ $c->user->email }}<br>
+                                <small>{{ $c->phone_number }}</small>
+                            </td>
 
-            <td>
-                {{ $c->membershipTier->name ?? '-' }}
-            </td>
+                            <td>
+                                {{ $c->membershipTier->tier_name ?? '-' }}
+                            </td>
 
-            <td>{{ $c->transactions_count }}</td>
+                            <td>{{ $c->transactions_count }}</td>
 
-            <td>{{ $c->points_balance }}</td>
+                            <td>{{ $c->points_balance }}</td>
 
-            <td class="table-actions">
-                <a href="{{ route('internal.customers.show', $c->customer_id) }}" class="link">View</a>
-                <a href="{{ route('internal.customers.edit', $c->customer_id) }}" class="link">Edit</a>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
+                            <td class="table-actions">
+                                <a href="{{ route('internal.customers.show', $c->id) }}" class="link">View</a>
+                                <a href="{{ route('internal.customers.edit', $c->id) }}" class="link">Edit</a>
+
+                                {{-- @if (auth()->user()->role == 'SALES')
+                                    <a href="{{ route('internal.customers.edit', $c->id) }}" class="link">Edit</a>
+                                @endif --}}
+
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
     </div>
-
-</div>
-
 @endsection

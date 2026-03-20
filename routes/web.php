@@ -35,7 +35,7 @@ Route::prefix('customer')->group(function () {
 
 
 //Internal FRONT//
-Route::prefix('internal')->group(function () {
+Route::middleware(['auth'])->prefix('internal')->group(function () {
 
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])
@@ -76,7 +76,7 @@ Route::prefix('internal')->group(function () {
         Route::get('/{id}/edit', [CustomerController::class,'edit'])
             ->name('internal.customers.edit');
 
-        Route::put('/{id}', [CustomerController::class,'update'])
+        Route::post('/{id}', [CustomerController::class,'update'])
             ->name('internal.customers.update');
     });
 

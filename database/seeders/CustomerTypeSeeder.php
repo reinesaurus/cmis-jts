@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\CustomerType;
 use Illuminate\Database\Seeder;
 
 class CustomerTypeSeeder extends Seeder
@@ -12,6 +12,25 @@ class CustomerTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        CustomerType::create([
+            'type_name' => 'Individual',
+            'description' => 'Individual',
+            'created_at' => null,
+            'updated_at' => null,
+        ]);
+
+        CustomerType::create([
+            'type_name' => 'Company',
+            'description' => 'Company',
+            'created_at' => null,
+            'updated_at' => null,
+        ]);
+
+        CustomerType::create([
+            'type_name' => 'Individual',
+            'description' => 'Contractor',
+            'created_at' => null,
+            'updated_at' => null,
+        ]);
     }
 }

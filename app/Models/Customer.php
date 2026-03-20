@@ -12,7 +12,7 @@ class Customer extends Model
         'user_id',
         'customer_code',
         'customer_type_id',
-        'membership_trial_id',
+        'membership_tier_id',
         'phone_number',
         'notes',
         'status',
@@ -33,9 +33,14 @@ class Customer extends Model
         return $this->hasMany(Transaction::class, 'customer_id');
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
     public function membershipTier()
     {
-        return $this->belongsTo(MembershipTier::class, 'membership_tier_id', 'membership_tier_id');
+        return $this->belongsTo(MembershipTier::class, 'membership_tier_id', 'id');
     }
 
     public function getCustomerTypeNameAttribute()

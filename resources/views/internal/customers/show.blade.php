@@ -28,7 +28,7 @@
 
     <div class="detail-row">
         <span>Name</span>
-        <strong>{{ $customer->customer_name }}</strong>
+        <strong>{{ $customer->user->name }}</strong>
     </div>
 
     <div class="detail-row">
@@ -38,7 +38,7 @@
 
     <div class="detail-row">
         <span>Email</span>
-        <strong>{{ $customer->email }}</strong>
+        <strong>{{ $customer->user->email }}</strong>
     </div>
 
     <div class="detail-row">
@@ -48,7 +48,7 @@
 
     <div class="detail-row">
         <span>Membership Tier</span>
-        <strong>{{ $customer->membershipTier->name ?? '-' }}</strong>
+        <strong>{{ $customer->membershipTier->tier_name ?? '-' }}</strong>
     </div>
 
     <div class="detail-row">

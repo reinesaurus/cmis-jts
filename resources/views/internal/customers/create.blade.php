@@ -49,9 +49,9 @@
 
             <select name="customer_type_id" required>
                 <option value="">Select Type</option>
-                <option value="1">Personal</option>
-                <option value="2">Business</option>
-                <option value="3">Partner</option>
+                @foreach ($customerTypes as $type)
+                    <option value="{{ $type->id }}">{{ $type->type_name }}</option>
+                @endforeach
             </select>
         </div>
 

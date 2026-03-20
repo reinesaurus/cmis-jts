@@ -29,7 +29,7 @@
                     <div class="user-info">
                         <div class="user-avatar">👤</div>
 
-                        <strong>{{ auth()->user()->full_name }}</strong>
+                        <strong>{{ auth()->user()->name }}</strong>
                         <p>{{ auth()->user()->email }}</p>
 
                         <p class="user-role">
@@ -57,7 +57,6 @@
                 <li><a href="{{ route('internal.customers') }}">Customers</a></li>
                 <li><a href="{{ route('internal.transactions') }}">Transactions</a></li>
                 <li><a href="{{ route('internal.rewards') }}">Rewards</a></li>
-                <li><a href="{{ route('internal.redemption') }}">Redemption</a></li>
             </ul>
         </div>
 
