@@ -27,7 +27,7 @@ class CustomerTypeSeeder extends Seeder
         ]);
 
         CustomerType::create([
-            'type_name' => 'Individual',
+            'type_name' => 'Contractor',
             'description' => 'Contractor',
             'created_at' => null,
             'updated_at' => null,

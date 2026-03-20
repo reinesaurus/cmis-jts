@@ -57,6 +57,7 @@
                 <li><a href="{{ route('internal.customers') }}">Customers</a></li>
                 <li><a href="{{ route('internal.transactions') }}">Transactions</a></li>
                 <li><a href="{{ route('internal.rewards') }}">Rewards</a></li>
+                <li><a href="{{ route('internal.redemption') }}">Redemption</a></li>
             </ul>
         </div>
 
